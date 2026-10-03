@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root { font-family: 'Manrope', sans-serif; color: #25211d; background: #f5eee5; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+* { box-sizing: border-box; }
+html { scroll-behavior: auto; }
+body { margin: 0; min-width: 320px; }
+button { font: inherit; }
+#root { min-height: 100svh; }
+
+@keyframes card-float { 0%, 100% { transform: rotate(4deg) translateY(0) rotateX(2deg); } 50% { transform: rotate(3deg) translateY(-9px) rotateX(4deg); } }
+@keyframes orbit-spin { from { rotate: 0deg; } to { rotate: 360deg; } }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes twinkle { 0%, 100% { opacity: .55; transform: scale(.9) rotate(-8deg); } 50% { opacity: 1; transform: scale(1.14) rotate(8deg); } }
+
+@utility animate-card-float { animation: card-float 6s ease-in-out infinite; }
+@utility animate-orbit-spin { animation: orbit-spin 12s linear infinite; }
+@utility animate-orbit-spin-reverse { animation: orbit-spin 9s linear infinite reverse; }
+@utility animate-bob { animation: bob 4s ease-in-out infinite; }
+@utility animate-twinkle { animation: twinkle 3s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
